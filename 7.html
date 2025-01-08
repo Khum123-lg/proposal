@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine? 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to top right, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .heart {
+            font-size: 8rem;
+            color: #fff;
+            animation: pulse 1.5s infinite;
+            margin-bottom: 30px;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #fff;
+            background: #ff6f61;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #ff9a9e;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        #response {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeInResponse 2s forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInResponse {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Will You Be Mine? 💍</h1>
+        <p class="heart">💖</p>
+        <div class="button-container">
+            <button onclick="showYes()">YES! 😘</button>
+            <button onclick="showNo()">NO... 😔</button>
+        </div>
+        <div id="response"></div>
+        <div id="choice"></div> <!-- Here we will display the choice -->
+    </div>
+
+    <script>
+        const yesResponses = [
+            "You made my heart skip a beat! 😍💖",
+            "I can’t wait for our adventures together! 🥰",
+            "You’ve just made me the happiest person alive! 🎉",
+            "My world just got brighter with your answer! 💫"
+        ];
+
+        const noResponses = [
+            "Oh no... 😢 Maybe next time? 💔",
+            "Well, that was unexpected! 😞",
+            "Are you sure? Maybe you missed clicking the right one! 😉",
+            "I’ll still think you’re amazing! 🌟"
+        ];
+
+        function showYes() {
+            const response = yesResponses[Math.floor(Math.random() * yesResponses.length)];
+            document.getElementById("response").innerHTML = response;
+            document.getElementById("response").style.color = "#28a745";
+            document.getElementById("response").style.opacity = "1";
+            document.getElementById("choice").innerHTML = "You clicked: YES! 😘";
+            document.getElementById("choice").style.color = "#28a745";
+        }
+
+        function showNo() {
+            const response = noResponses[Math.floor(Math.random() * noResponses.length)];
+            document.getElementById("response").innerHTML = response;
+            document.getElementById("response").style.color = "#dc3545";
+            document.getElementById("response").style.opacity = "1";
+            document.getElementById("choice").innerHTML = "You clicked: NO... 😔";
+            document.getElementById("choice").style.color = "#dc3545";
+        }
+    </script>
+</body>
+</html>
